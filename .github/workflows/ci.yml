@@ -1,0 +1,17 @@
+name: CI Workflow
+
+# Policies run job in branches
+on: workflow_dispatch
+
+# concurrency:
+#   group: ${{ github.workflow }}-${{ github.ref }}
+#   cancel-in-progress: true
+
+jobs:
+
+  # Workflow reference => (Monorepo - NodeJS and ReactJS) Build app
+  golden_ci:
+    uses: devsecops-pipelines/.github/workflows/bases/monorepos/nodejs-react/ci.yml@main
+    with:
+      runner_image_job_install_deps: ubuntu-latest
+      runner_image_job_build_app: ubuntu-latest
