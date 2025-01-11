@@ -2,8 +2,9 @@ name: CI Workflow
 
 # Policies run job in branches
 on: 
-  workflow_dispatch:
-    inputs:
+  push: 
+    branches:
+      - feature/create-pipeline
 
 # concurrency:
 #   group: ${{ github.workflow }}-${{ github.ref }}
