@@ -3,6 +3,7 @@ name: CI Workflow
 # Policies run job in branches
 on: 
   workflow_dispatch:
+    inputs:
 
 # concurrency:
 #   group: ${{ github.workflow }}-${{ github.ref }}
