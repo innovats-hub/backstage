@@ -1,5 +1,4 @@
 name: CI Workflow
-run-name: CI Workflow
 
 # Policies run job in branches
 on: workflow_dispatch
