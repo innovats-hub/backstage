@@ -12,7 +12,7 @@ on:
 
 jobs:
 
-  # Workflow reference => (Monorepo - NodeJS and ReactJS) Build app
+  # Workflow reference => (Monorepo - NodeJS and ReactJS) pipeline base CI
   golden_ci:
     uses: innovats-hub/devsecops-pipelines/.github/workflows/ci.yml@feature/golden-pipeline-nodejs
     with:
