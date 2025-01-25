@@ -14,6 +14,7 @@ jobs:
 
   # Workflow reference => (Monorepo - NodeJS and ReactJS) pipeline base CI
   golden_ci:
+    name: "Continuous Integration"
     uses: innovats-hub/devsecops-pipelines/.github/workflows/ci.yml@feature/golden-pipeline-nodejs
     with:
       runner_image_job_install_deps: ubuntu-latest
