@@ -20,3 +20,4 @@ jobs:
       runner_image_job_install_deps: ubuntu-latest
       runner_image_job_build_app: ubuntu-latest
       package_manager_job_install_deps: npm
+      node_version_install_deps: 20.18.2
