@@ -21,4 +21,4 @@ jobs:
       globals_node_version: "20.18.2"
       job_install_deps_runner_image: "ubuntu-latest"
       job_build_app_runner_image: "ubuntu-latest"
-      job_build_reusable_install_args: "--config ../../app-config.yaml"
+      job_build_reusable_build_args: "yarn build:backend --config ../../app-config.yaml && yarn build:app --config ../../app-config.yaml"
