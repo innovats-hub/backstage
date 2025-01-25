@@ -43,7 +43,6 @@ site
 
 # Local configuration files
 *.local.yaml
-yarn.lock
 
 # Sensitive credentials
 *-credentials.yaml
