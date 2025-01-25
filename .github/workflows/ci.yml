@@ -17,7 +17,8 @@ jobs:
     name: "Continuous Integration"
     uses: innovats-hub/devsecops-pipelines/.github/workflows/ci.yml@feature/golden-pipeline-nodejs
     with:
-      runner_image_job_install_deps: ubuntu-latest
-      runner_image_job_build_app: ubuntu-latest
-      package_manager_job_install_deps: yarn
-      node_version_install_deps: 20.18.2
+      globals_package_manager: "yarn"
+      globals_node_version: "20.18.2"
+      job_install_deps_runner_image: "ubuntu-latest"
+      job_build_app_runner_image: "ubuntu-latest"
+      job_build_reusable_install_args: "--config ../../app-config.yaml"
