@@ -19,4 +19,6 @@ jobs:
       globals_package_manager: "yarn"
       globals_node_version: "20.18.2"
       globals_runner_image: "ubuntu-latest"
-      job_build_app_build_args: "build:backend --config ../../app-config.yaml && yarn build:app --config ../../app-config.yaml"
+      job_build_app_build_args: "build:backend --config ../../app-config.yaml"
+      job_build_app_path_compress_build: "package/backend/dist"
+      job_build_image_path_extract_build: "package/backend/"
