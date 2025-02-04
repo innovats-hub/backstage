@@ -11,14 +11,14 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-
   # Workflow reference => (Monorepo - NodeJS and ReactJS) pipeline base CI
   golden_ci:
     name: "Continuous Integration"
-    uses: innovats-hub/devsecops-pipelines/.github/workflows/ci.yml@feature/golden-pipeline-nodejs
+    uses: innovats-hub/devsecops-pipelines/.github/workflows/base-ci.yml@feature/golden-pipeline-nodejs
     with:
       globals_package_manager: "yarn"
       globals_node_version: "20.18.2"
-      job_install_deps_runner_image: "ubuntu-latest"
-      job_build_app_runner_image: "ubuntu-latest"
-      job_build_reusable_build_args: "yarn build:backend --config ../../app-config.yaml && yarn build:app --config ../../app-config.yaml"
+      globals_runner_name: "lab-innovats"
+      job_install_deps_container_runner_image: "node:lts-buster-slim"
+      job_build_app_container_runner_image: "node:lts-buster-slim"
+      job_build_app_build_args: "yarn build:backend --config ../../app-config.yaml && yarn build:app --config ../../app-config.yaml"
