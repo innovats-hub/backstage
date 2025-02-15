@@ -14,11 +14,23 @@ jobs:
   # Workflow reference => (Monorepo - NodeJS and ReactJS) pipeline base CI
   golden_ci:
     name: "Continuous Integration"
-    uses: innovats-hub/devsecops-pipelines/.github/workflows/base-ci.yml@feature/golden-pipeline-nodejs
+    uses: innovats-hub/devsecops-pipelines/.github/workflows/node-base-ci.yml@feature/golden-pipeline-nodejs
     with:
       globals_package_manager: "yarn"
-      globals_node_version: "20.18.2"
-      globals_runner_image: "ubuntu-latest"
+      globals_node_version: "18.20.6"
+      globals_runner_name: "ubuntu-latest"
+      globals_version_app: "1.0.0"
+
+      # Temporary
       job_build_app_build_args: "build:backend --config ../../app-config.yaml"
       job_build_app_path_compress_build: "packages/backend/dist"
       job_build_image_path_extract_build: "packages/backend/"
+      job_upload_artifacts_docker_registry_url: https://nexus.innovatshub.com/repository/docker-hosted
+      job_upload_artifacts_helm_repository_url: https://nexus.innovatshub.com/repository/helm-hosted/
+
+    secrets:
+      job_upload_artifacts_docker_registry_username: ${{ secrets.DOCKER_REGISTRY_USERNAME }}
+      job_upload_artifacts_docker_registry_password: ${{ secrets.DOCKER_REGISTRY_PASSWORD }}
+      job_upload_artifacts_helm_repository_username: ${{ secrets.HELM_REPOSITORY_USERNAME }}
+      job_upload_artifacts_helm_repository_password: ${{ secrets.HELM_REPOSITORY_PASSWORD }}
+      job_upload_application_kube_config_data:  ${{ secrets.KUBE_CONFIG_DATA }}
