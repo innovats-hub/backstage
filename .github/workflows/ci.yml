@@ -35,4 +35,3 @@ jobs:
       job_upload_artifacts_helm_repository_username: ${{ secrets.HELM_REPOSITORY_USERNAME }}
       job_upload_artifacts_helm_repository_password: ${{ secrets.HELM_REPOSITORY_PASSWORD }}
       job_upload_application_kube_config_data:  ${{ secrets.KUBE_CONFIG_DATA }}
-      
