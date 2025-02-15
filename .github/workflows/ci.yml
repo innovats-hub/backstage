@@ -20,6 +20,7 @@ jobs:
       globals_node_version: "18.20.6"
       globals_runner_name: "ubuntu-latest"
       globals_version_app: "1.0.0"
+      globals_name_app: "backstage-dev"
 
       # Temporary
       job_build_app_build_args: "build:backend --config ../../app-config.yaml"
